@@ -10,6 +10,7 @@ public class EasyMath {
     private int sum;
     private double average;
     private ArrayList<Integer> numbers;
+    private int modulo;
 
     public EasyMath() {
         this.numbers = new ArrayList<>();
@@ -30,5 +31,19 @@ public class EasyMath {
     public double getAverage(){
         this.average =  (double)this.sum/numbers.size();
         return this.average;
+    }
+
+    public void computeModulo(int numerator, int denominator){
+        this.modulo = numerator%denominator;
+    }
+
+    public int getModulo(){
+        return this.modulo;
+    }
+
+    public static void main(String[] args) {
+        EasyMath math = new EasyMath();
+        math.computeModulo(12,5);
+        System.out.println(math.getModulo());
     }
 }

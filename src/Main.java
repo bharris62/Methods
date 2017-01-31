@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        //Testing out my banking class.
-        System.out.println("Output for Banking Class");
-        Banking bank = new Banking("Blake Harris", 1000,"12181990bh");
+        //Testing out my BankAccount class.
+        System.out.println("Output for BankAccount Class");
+        BankAccount bank = new BankAccount("Blake Harris", 1000,"1234");
         bank.addMoney(50);
         System.out.println(bank);
         bank.subtractMoney(100);

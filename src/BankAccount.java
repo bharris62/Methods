@@ -1,41 +1,41 @@
 /**
  * Created by BHarris on 1/30/17.
  *
- * A basic bank where you can create a name with an initial balance, and generate a random 4 digit
+ * A bank account where you can create a name with an initial balance, and have a user enter a 4 character pin
  * account number.
  *
- * Also a add money and subtract money method are added.  add and subtract will not be allowed if there is
- * not enough money in the account.  All accounts are personal, not business.
  */
-public class Banking {
+public class BankAccount {
     //private because these do not need to be accessed from other classes.
-    private String accountNumber;
+    private String accountPin;
     private double initialBalance;
     private String name;
     private String typeOfBusiness;
     private static int DEFAULT_BALANCE = 0;
 
-    public Banking(String name, double initialBalance, String accountNumber){
+    public BankAccount(String name, double initialBalance, String accountNumber){
         this.name = name;
         this.initialBalance = initialBalance;
-        this.accountNumber = accountNumber;
+        this.accountPin = accountNumber;
         this.typeOfBusiness = "Personal";
     }
 
-    public Banking(String name, String accountNumber){
+    public BankAccount(String name, String accountNumber){
         this.name = name;
         this.initialBalance = DEFAULT_BALANCE;
-        this.accountNumber = accountNumber;
+        this.accountPin = accountNumber;
         this.typeOfBusiness = "Personal";
 
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getAccountPin() {
+        return accountPin;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setAccountPin(String accountPin) {
+        if(accountPin.length() == 4) {
+            this.accountPin = accountPin;
+        }
     }
 
     public double getInitialBalance() {
@@ -43,7 +43,9 @@ public class Banking {
     }
 
     public void setInitialBalance(double initialBalance) {
-        this.initialBalance = initialBalance;
+        if(initialBalance > 0) {
+            this.initialBalance = initialBalance;
+        }
     }
 
     public String getName() {
@@ -56,10 +58,6 @@ public class Banking {
 
     public String getTypeOfBusiness() {
         return typeOfBusiness;
-    }
-
-    public void setTypeOfBusiness(String typeOfBusiness) {
-        this.typeOfBusiness = typeOfBusiness;
     }
 
     public void addMoney(int money) {
@@ -75,13 +73,12 @@ public class Banking {
     }
 
     public String instructions(){
-        return "Enter your whole name, initial balance you are depositing, and your date of birth, plus" +
-                "first and last name initial ex 12181990bh";
+        return "Enter your whole name, initial balance you are depositing, and a 4 digit ATM pin.";
 
     }
 
     public String toString(){
         return "" + "name: " + name + " initial balance: " + initialBalance +
-                " accountNumber " + accountNumber;
+                " accountPin " + accountPin;
     }
 }
