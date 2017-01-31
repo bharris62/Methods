@@ -11,6 +11,7 @@ public class EasyMath {
     private double average;
     private ArrayList<Integer> numbers;
     private int modulo;
+    private int floor;
 
     public EasyMath() {
         this.numbers = new ArrayList<>();
@@ -29,7 +30,7 @@ public class EasyMath {
     }
 
     public double getAverage(){
-        this.average =  (double)this.sum/numbers.size();
+        this.average =  (double)this.sum / numbers.size();
         return this.average;
     }
 
@@ -41,9 +42,52 @@ public class EasyMath {
         return this.modulo;
     }
 
+    public int getFloor(){
+        int lowest = numbers.get(0);
+        for(int i : numbers){
+            if(i < lowest) {
+                lowest = i;
+            }
+
+        }
+        return lowest;
+    }
+
+    public int getCeiling(){
+        int highest = numbers.get(0);
+        for(int i : numbers){
+            if(i > highest) {
+                highest = i;
+            }
+
+        }
+        return highest;
+    }
+
+    public int getMin(int a, int b){
+        if (a < b) {
+            return a;
+        }
+        return b;
+    }
+
+    public int getMax(int a, int b){
+        if (a > b) {
+            return a;
+        }
+        return b;
+    }
+
     public static void main(String[] args) {
         EasyMath math = new EasyMath();
-        math.computeModulo(12,5);
-        System.out.println(math.getModulo());
+        math.setNumber(4);
+        math.setNumber(2);
+        math.setNumber(10);
+        math.setNumber(20);
+        System.out.println(math.getFloor());
+        System.out.println(math.getCeiling());
+        System.out.println(math.getMax(3,2));
+        System.out.println(math.getMin(3,2));
+
     }
 }

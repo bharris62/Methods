@@ -66,6 +66,5 @@ public class Main {
         classroom.getStudent();
         System.out.println(classroom);
 
-
     }
 }
