@@ -20,7 +20,6 @@ public class Banking {
         this.initialBalance = initialBalance;
         this.accountNumber = accountNumber;
         this.typeOfBusiness = "Personal";
-
     }
 
     public Banking(String name, String accountNumber){
