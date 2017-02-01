@@ -25,7 +25,6 @@ public class BankAccount {
         this.initialBalance = DEFAULT_BALANCE;
         this.accountPin = accountNumber;
         this.typeOfBusiness = "Personal";
-
     }
 
     public String getAccountPin() {
@@ -73,7 +72,7 @@ public class BankAccount {
     }
 
     public String instructions(){
-        return "Enter your whole name, initial balance you are depositing, and a 4 digit ATM pin.";
+        return "Enter your whole name, initial balance you are depositing, and a 4 digit ATM(accepts letters) pin.";
 
     }
 
